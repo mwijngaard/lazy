@@ -21,6 +21,7 @@ $files = [
 	'Lazy/LazyReduce.php',
 	'Lazy/LazyRepeat.php',
 	'Lazy/LazyReplicate.php',
+	'Lazy/LazyResolve.php',
 	'Lazy/LazySum.php',
 ];
 
