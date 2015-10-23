@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit bootstrap="test/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="All">
+            <directory>test</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="display_errors" value="1" />
+    </php>
+</phpunit>
