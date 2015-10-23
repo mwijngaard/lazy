@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-abstract class AbstractValue implements LazyValue {
+abstract class AbstractLazyValue implements LazyValue {
 	public function __toString() {
 		return (string) $this->resolve();
 	}

@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyRange extends AbstractEnumerable {
+class LazyRange extends AbstractLazyEnumerable {
 	private $start;
 	private $end;
 	private $step;

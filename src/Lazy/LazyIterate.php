@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyIterate extends AbstractEnumerable {
+class LazyIterate extends AbstractLazyEnumerable {
 	private $value_func;
 	private $value_func_args;
 

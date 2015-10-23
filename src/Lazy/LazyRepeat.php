@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyRepeat extends AbstractEnumerable {
+class LazyRepeat extends AbstractLazyEnumerable {
 	/** @var  callable */
 	private $value_func;
 

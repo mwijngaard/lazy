@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyFilter extends AbstractEnumerable {
+class LazyFilter extends AbstractLazyEnumerable {
 	/** @var LazyEnumerable  */
 	private $enumerable;
 	/** @var callable  */

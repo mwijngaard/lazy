@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyMap extends AbstractEnumerable {
+class LazyMap extends AbstractLazyEnumerable {
 	/** @var LazyEnumerable  */
 	private $enumerable;
 	/** @var callable  */

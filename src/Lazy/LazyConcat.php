@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyConcat extends AbstractEnumerable {
+class LazyConcat extends AbstractLazyEnumerable {
 	/** @var LazyEnumerable[]  */
 	private $enumerables;
 

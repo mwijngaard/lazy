@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyCycle extends AbstractEnumerable {
+class LazyCycle extends AbstractLazyEnumerable {
 	/** @var LazyEnumerable  */
 	private $enumerable;
 
