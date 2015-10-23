@@ -3,15 +3,15 @@
 namespace mwijngaard\Lazy;
 
 class LazyOr extends AbstractLazyValue {
-	/** @var LazyEnumerable[] */
-	private $enumerable;
+	/** @var array|\Traversable */
+	private $traversable;
 
-	public function __construct(LazyEnumerable $enumerable) {
-		$this->enumerable = $enumerable;
+	public function __construct($traversable) {
+		$this->traversable = $traversable;
 	}
 
 	public function resolve() {
-		foreach ($this->enumerable as $value) {
+		foreach ($this->traversable as $value) {
 			if ((bool) $value === true) {
 				return true;
 			}
@@ -20,6 +20,6 @@ class LazyOr extends AbstractLazyValue {
 	}
 }
 
-function lazy_or(LazyEnumerable $enumerable) {
-	return new LazyOr($enumerable);
+function lazy_or($traversable) {
+	return new LazyOr($traversable);
 }

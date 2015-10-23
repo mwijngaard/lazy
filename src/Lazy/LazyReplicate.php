@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyReplicate extends AbstractLazyEnumerable {
+class LazyReplicate extends AbstractLazyTraversable {
 	/** @var  int */
 	private $ct;
 	private $value;

@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-abstract class AbstractLazyEnumerable extends AbstractLazyValue implements LazyEnumerable {
+abstract class AbstractLazyTraversable extends AbstractLazyValue implements LazyTraversable {
 	public function resolve() {
 		return iterator_to_array($this);
 	}

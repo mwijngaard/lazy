@@ -2,23 +2,23 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyConcat extends AbstractLazyEnumerable {
-	/** @var LazyEnumerable[]  */
-	private $enumerables;
+class LazyConcat extends AbstractLazyTraversable {
+	/** @var (array|\Traversable)[]  */
+	private $traversables;
 
-	public function __construct(LazyEnumerable ...$enumerables) {
-		$this->enumerables = $enumerables;
+	public function __construct(...$traversables) {
+		$this->traversables = $traversables;
 	}
 
 	public function getIterator() {
-		foreach ($this->enumerables as $enumerable) {
-			foreach ($enumerable as $key => $value) {
+		foreach ($this->traversables as $traversable) {
+			foreach ($traversable as $key => $value) {
 				yield $key => $value;
 			}
 		}
 	}
 }
 
-function lazy_concat(LazyEnumerable ...$enumerables) {
-	return new LazyConcat(...$enumerables);
+function lazy_concat(...$traversables) {
+	return new LazyConcat(...$traversables);
 }

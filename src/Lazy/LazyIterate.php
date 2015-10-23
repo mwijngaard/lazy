@@ -2,8 +2,10 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyIterate extends AbstractLazyEnumerable {
+class LazyIterate extends AbstractLazyTraversable {
+	/** @var callable  */
 	private $value_func;
+	/** @var  array */
 	private $value_func_args;
 
 	public function __construct(callable $value_func, ...$value_func_args) {

@@ -3,19 +3,19 @@
 namespace mwijngaard\Lazy;
 
 class LazyAny extends AbstractLazyValue {
-	/** @var LazyEnumerable[] */
-	private $enumerable;
+	/** @var array|\Traversable */
+	private $traversable;
 	/** @var callable  */
-	private $func;
+	private $cond_func;
 
-	public function __construct(LazyEnumerable $enumerable, callable $func) {
-		$this->enumerable = $enumerable;
-		$this->func = $func;
+	public function __construct($traversable, callable $cond_func) {
+		$this->traversable = $traversable;
+		$this->cond_func = $cond_func;
 	}
 
 	public function resolve() {
-		foreach ($this->enumerable as $key => $value) {
-			if ((bool) call_user_func($this->func, $value, $key) === true) {
+		foreach ($this->traversable as $key => $value) {
+			if ((bool) call_user_func($this->cond_func, $value, $key) === true) {
 				return true;
 			}
 		}
@@ -23,6 +23,6 @@ class LazyAny extends AbstractLazyValue {
 	}
 }
 
-function lazy_any(LazyEnumerable $enumerable) {
-	return new LazyAny($enumerable);
+function lazy_any($traversable, callable $func) {
+	return new LazyAny($traversable, $func);
 }

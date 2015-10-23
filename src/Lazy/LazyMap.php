@@ -2,24 +2,24 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyMap extends AbstractLazyEnumerable {
-	/** @var LazyEnumerable  */
-	private $enumerable;
+class LazyMap extends AbstractLazyTraversable {
+	/** @var array|\Traversable  */
+	private $traversable;
 	/** @var callable  */
 	private $map_func;
 
-	public function __construct(LazyEnumerable $enumerable, callable $map_func) {
-		$this->enumerable = $enumerable;
+	public function __construct($traversable, callable $map_func) {
+		$this->traversable = $traversable;
 		$this->map_func = $map_func;
 	}
 
 	public function getIterator() {
-		foreach ($this->enumerable as $key => $value) {
-			yield $key => call_user_func($this->map_func, $value);
+		foreach ($this->traversable as $key => $value) {
+			yield $key => call_user_func($this->map_func, $value, $key);
 		}
 	}
 }
 
-function lazy_map(LazyEnumerable $enumerable, callable $map_func) {
+function lazy_map($enumerable, callable $map_func) {
 	return new LazyMap($enumerable, $map_func);
 }

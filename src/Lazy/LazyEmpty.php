@@ -3,15 +3,15 @@
 namespace mwijngaard\Lazy;
 
 class LazyEmpty extends AbstractLazyValue {
-	/** @var LazyEnumerable  */
-	private $enumerable;
+	/** @var array|\Traversable  */
+	private $traversable;
 
-	public function __construct(LazyEnumerable $enumerable) {
-		$this->enumerable = $enumerable;
+	public function __construct($traversable) {
+		$this->traversable = $traversable;
 	}
 
 	public function resolve() {
-		foreach ($this->enumerable as $key => $value) {
+		foreach ($this->traversable as $key => $value) {
 			return false;
 		}
 
@@ -19,6 +19,6 @@ class LazyEmpty extends AbstractLazyValue {
 	}
 }
 
-function lazy_empty(LazyEnumerable $enumerable) {
-	return new LazyEmpty($enumerable);
+function lazy_empty($traversable) {
+	return new LazyEmpty($traversable);
 }

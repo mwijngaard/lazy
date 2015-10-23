@@ -2,23 +2,23 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyCycle extends AbstractLazyEnumerable {
-	/** @var LazyEnumerable  */
-	private $enumerable;
+class LazyCycle extends AbstractLazyTraversable {
+	/** @var array|\Traversable */
+	private $traversable;
 
-	public function __construct(LazyEnumerable $enumerable) {
-		$this->enumerable = $enumerable;
+	public function __construct($traversable) {
+		$this->traversable = $traversable;
 	}
 
 	public function getIterator() {
 		while (true) {
-			foreach ($this->enumerable as $key => $value) {
+			foreach ($this->traversable as $key => $value) {
 				yield $key => $value;
 			}
 		}
 	}
 }
 
-function lazy_cycle(LazyEnumerable $enumerable) {
-	return new LazyCycle($enumerable);
+function lazy_cycle($traversable) {
+	return new LazyCycle($traversable);
 }
