@@ -2,11 +2,11 @@
 
 namespace mwijngaard\Lazy;
 
-class Cycle extends AbstractInfiniteEnumerable {
-	/** @var EnumerableInterface  */
+class LazyCycle extends AbstractEnumerable {
+	/** @var LazyEnumerable  */
 	private $enumerable;
 
-	public function __construct(EnumerableInterface $enumerable) {
+	public function __construct(LazyEnumerable $enumerable) {
 		$this->enumerable = $enumerable;
 	}
 
@@ -19,6 +19,6 @@ class Cycle extends AbstractInfiniteEnumerable {
 	}
 }
 
-function lazy_cycle(EnumerableInterface $enumerable) {
-	return new Cycle($enumerable);
+function lazy_cycle(LazyEnumerable $enumerable) {
+	return new LazyCycle($enumerable);
 }

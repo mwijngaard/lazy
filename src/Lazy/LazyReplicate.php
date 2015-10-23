@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class Replicate extends AbstractInfiniteEnumerable {
+class LazyReplicate extends AbstractEnumerable {
 	/** @var  int */
 	private $ct;
 	private $value;
@@ -20,5 +20,5 @@ class Replicate extends AbstractInfiniteEnumerable {
 }
 
 function lazy_replicate($ct, $value) {
-	return new Replicate($ct, $value);
+	return new LazyReplicate($ct, $value);
 }

@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class Range extends AbstractEnumerable {
+class LazyRange extends AbstractEnumerable {
 	private $start;
 	private $end;
 	private $step;
@@ -14,7 +14,7 @@ class Range extends AbstractEnumerable {
 	}
 
 	public function getIterator() {
-		for ($current = $this->start; $current != $this->end; $current += $this->end) {
+		for ($current = $this->start; $current <= $this->end; $current += $this->step) {
 			yield $current;
 		}
 	}
@@ -24,8 +24,8 @@ class Range extends AbstractEnumerable {
  * @param int $start
  * @param int|null $end
  * @param int $step
- * @return Range
+ * @return LazyRange
  */
 function lazy_range($start, $end = null, $step = 1) {
-	return new Range($start, $end, $step);
+	return new LazyRange($start, $end, $step);
 }

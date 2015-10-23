@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class Repeat extends AbstractInfiniteEnumerable {
+class LazyRepeat extends AbstractEnumerable {
 	/** @var  callable */
 	private $value_func;
 
@@ -18,5 +18,5 @@ class Repeat extends AbstractInfiniteEnumerable {
 }
 
 function lazy_repeat(callable $value_func) {
-	return new Repeat($value_func);
+	return new LazyRepeat($value_func);
 }

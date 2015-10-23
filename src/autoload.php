@@ -1,17 +1,16 @@
 <?php
 
 $files = [
-	'Lazy/Concat.php',
-	'Lazy/Count.php',
-	'Lazy/Cycle.php',
-	'Lazy/Filter.php',
-	'Lazy/Iterate.php',
-	'Lazy/Map.php',
-	'Lazy/Range.php',
-	'Lazy/Reduce.php',
-	'Lazy/Repeat.php',
-	'Lazy/Replicate.php',
-	'Lazy/Sum.php',
+	'Lazy/LazyConcat.php',
+	'Lazy/LazyCount.php',
+	'Lazy/LazyCycle.php',
+	'Lazy/LazyFilter.php',
+	'Lazy/LazyIterate.php',
+	'Lazy/LazyMap.php',
+	'Lazy/LazyRange.php',
+	'Lazy/LazyReduce.php',
+	'Lazy/LazyRepeat.php',
+	'Lazy/LazyReplicate.php'
 ];
 
 foreach ($files as $file) {

@@ -2,13 +2,13 @@
 
 namespace mwijngaard\Lazy;
 
-class Map extends AbstractEnumerable {
-	/** @var EnumerableInterface  */
+class LazyMap extends AbstractEnumerable {
+	/** @var LazyEnumerable  */
 	private $enumerable;
 	/** @var callable  */
 	private $map_func;
 
-	public function __construct(EnumerableInterface $enumerable, callable $map_func) {
+	public function __construct(LazyEnumerable $enumerable, callable $map_func) {
 		$this->enumerable = $enumerable;
 		$this->map_func = $map_func;
 	}
@@ -20,6 +20,6 @@ class Map extends AbstractEnumerable {
 	}
 }
 
-function lazy_map(EnumerableInterface $enumerable, callable $map_func) {
-	return new Map($enumerable, $map_func);
+function lazy_map(LazyEnumerable $enumerable, callable $map_func) {
+	return new LazyMap($enumerable, $map_func);
 }

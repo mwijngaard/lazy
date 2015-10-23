@@ -2,6 +2,6 @@
 
 namespace mwijngaard\Lazy;
 
-interface ValueInterface {
+interface LazyValue {
 	public function resolve();
 }

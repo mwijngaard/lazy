@@ -2,11 +2,11 @@
 
 namespace mwijngaard\Lazy;
 
-class Concat extends AbstractEnumerable {
-	/** @var EnumerableInterface[]  */
+class LazyConcat extends AbstractEnumerable {
+	/** @var LazyEnumerable[]  */
 	private $enumerables;
 
-	public function __construct(EnumerableInterface ...$enumerables) {
+	public function __construct(LazyEnumerable ...$enumerables) {
 		$this->enumerables = $enumerables;
 	}
 
@@ -19,6 +19,6 @@ class Concat extends AbstractEnumerable {
 	}
 }
 
-function lazy_concat(EnumerableInterface ...$enumerables) {
-	return new Concat(...$enumerables);
+function lazy_concat(LazyEnumerable ...$enumerables) {
+	return new LazyConcat(...$enumerables);
 }

@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class Iterate extends AbstractInfiniteEnumerable {
+class LazyIterate extends AbstractEnumerable {
 	private $value_func;
 	private $value_func_args;
 
@@ -19,5 +19,5 @@ class Iterate extends AbstractInfiniteEnumerable {
 }
 
 function lazy_iterate(callable $value_func, ... $value_func_args) {
-	return new Iterate($value_func, ...$value_func_args);
+	return new LazyIterate($value_func, ...$value_func_args);
 }

@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-function count(EnumerableInterface $enumerable) {
+function lazy_count(LazyEnumerable $enumerable) {
 	return lazy_reduce($enumerable, function ($prev) {
 		return $prev + 1;
 	}, 0);
