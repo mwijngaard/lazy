@@ -1,7 +1,9 @@
 <?php
 
 $files = [
+	'Lazy/LazyAll.php',
 	'Lazy/LazyAnd.php',
+	'Lazy/LazyAny.php',
 	'Lazy/LazyConcat.php',
 	'Lazy/LazyCount.php',
 	'Lazy/LazyCycle.php',
