@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyCycle extends AbstractLazyTraversable {
+class LazyCycle implements \IteratorAggregate {
 	/** @var array|\Traversable */
 	private $traversable;
 

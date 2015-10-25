@@ -13,7 +13,7 @@ class RangeTest extends \PHPUnit_Framework_TestCase {
 			if ($end < $start) {
 				list($end, $start) = array($start, $end);
 			}
-			$this->assertEquals(range($start, $end), lazy_range($start, $end)->resolve());
+			$this->assertEquals(range($start, $end), iterator_to_array(lazy_range($start, $end)));
 		});
 	}
 }

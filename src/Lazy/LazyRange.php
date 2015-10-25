@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyRange extends AbstractLazyTraversable {
+class LazyRange implements \IteratorAggregate {
 	private $start;
 	private $end;
 	private $step;

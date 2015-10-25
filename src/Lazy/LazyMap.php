@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyMap extends AbstractLazyTraversable {
+class LazyMap implements \IteratorAggregate {
 	/** @var array|\Traversable  */
 	private $traversable;
 	/** @var callable  */

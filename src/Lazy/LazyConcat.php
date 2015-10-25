@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyConcat extends AbstractLazyTraversable {
+class LazyConcat implements \IteratorAggregate {
 	/** @var (array|\Traversable)[]  */
 	private $traversables;
 

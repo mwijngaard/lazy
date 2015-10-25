@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyRepeat extends AbstractLazyTraversable {
+class LazyRepeat implements \IteratorAggregate {
 	/** @var  callable */
 	private $value_func;
 

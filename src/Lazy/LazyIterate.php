@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyIterate extends AbstractLazyTraversable {
+class LazyIterate implements \IteratorAggregate {
 	/** @var callable  */
 	private $value_func;
 	/** @var  array */

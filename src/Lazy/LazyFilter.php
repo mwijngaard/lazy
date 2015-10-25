@@ -2,7 +2,7 @@
 
 namespace mwijngaard\Lazy;
 
-class LazyFilter extends AbstractLazyTraversable {
+class LazyFilter implements \IteratorAggregate {
 	/** @var array|\Traversable  */
 	private $traversable;
 	/** @var callable  */
